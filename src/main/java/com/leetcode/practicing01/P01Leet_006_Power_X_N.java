@@ -1,4 +1,5 @@
-package com.leetcode;
+package com.leetcode.practicing01;
+
 /**
  * Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
  * <p>
@@ -27,12 +28,16 @@ package com.leetcode;
  * Either x is not zero or n > 0.
  * -104 <= xn <= 104
  */
-public class Leet_006_Power_X_N {
+public class P01Leet_006_Power_X_N {
 
     public static void main(String[] args) {
-        Leet_006_Power_X_N leet = new Leet_006_Power_X_N();
-        System.out.println(leet.myPow(2, 10));//1024
-        System.out.println(leet.myPow(4, 5));//1024
+        P01Leet_006_Power_X_N leet = new P01Leet_006_Power_X_N();
+//        System.out.println(leet.myPow(2, 4));//1024
+//        System.out.println(leet.myPow(4, 5));//1024
+//        System.out.println(leet.myPow(2.0000, 10));//9.26100
+//        System.out.println(leet.myPow(4.0000, 5));//9.26100
+        System.out.println(leet.myPow(2.0000, 100));//9.26100
+        System.out.println(leet.myPow(16.0000, 25    ));//9.26100
 //        System.out.println(leet.myPow(2.10000, 3));//9.26100
 //        System.out.println(leet.myPow(2.00000, -2));// 0.25000
 //        System.out.println(leet.myPow(0.44528, 0));// 1.0
@@ -41,20 +46,19 @@ public class Leet_006_Power_X_N {
 
     public double myPow(double x, int n) {
         //convert in positive
-        long num = Math.abs((long) n);
+        long power = Math.abs((long) n);
         //setup a minimum result
-        double result = 1.0;
-        while (num != 0) {
+        double valor = 1.0;
+        while (power != 0) {
             //n is a odd number
-            if (num % 2 == 1) {
+            if (power % 2 == 1) {
                 //
-                result = result * x;
-                num--;
+                valor = valor * x;
+                power--;
             }
             x = x * x;
-            num = num / 2;
+            power = power / 2;
         }
-        return n < 0 ? 1.0 / result : result;
-
+        return n < 0 ? 1.0 / valor : valor;
     }
 }

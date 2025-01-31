@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.practicing01;
 
 /**
  * Given an integer n, return the number of trailing zeroes in n!.
@@ -30,27 +30,27 @@ package com.leetcode;
  *
  * Follow up: Could you write a solution that works in logarithmic time complexity?
  */
-public class Leet_004_Factorial_Trailing_Zeroes {
+public class P01Leet_004_Factorial_Trailing_Zeroes {
 
     public static void main(String[] args) {
 //        int three = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(3);
 //        System.out.println("Factorial of 3 is "+three);
         System.out.println("-------------------");
-//        int five = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(5);
-//        System.out.println("Factorial of 5 is "+five);
+        int five = P01Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(5);
+        System.out.println("Factorial of 5 is "+five);
 //        System.out.println("-------------------");
 //        int ten = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(10);
 //        System.out.println("Factorial of 10 is "+ten);
         System.out.println("-------------------");
-//        int n20 = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(20);
+//        int n20 = PLeet_004_Factorial_Trailing_Zeroes.trailingZeroes(20);
 //        System.out.println("Factorial of 20 is " + n20);
         System.out.println("-------------------");
 //        int n25 = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(25);
 //        System.out.println("Factorial of 25 is " + n25);
 //        System.out.println("-------------------");
 
-        int n125 = Leet_004_Factorial_Trailing_Zeroes.trailingZeroes(125);
-        System.out.println("Factorial of 125 is " + n125);
+//        int n125 = PLeet_004_Factorial_Trailing_Zeroes.trailingZeroes(125);
+//        System.out.println("Factorial of 125 is " + n125);
         System.out.println("-------------------");
     }
 
@@ -61,7 +61,10 @@ public class Leet_004_Factorial_Trailing_Zeroes {
         int zeros = 0;
         int currentPowerOf5 = 5;
         while (n >= currentPowerOf5) {
+            // 0 + 0 / 5
             zeros  += n / currentPowerOf5;
+
+            // 5 * 5 = 25
             currentPowerOf5 *=5;
         }
         return zeros;

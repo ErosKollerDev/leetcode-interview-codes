@@ -3,7 +3,7 @@ package com.leetcode;
 public class Leet_023_IntegertoEnglishWords {
     public static void main(String[] args) {
         Leet_023_IntegertoEnglishWords leet = new Leet_023_IntegertoEnglishWords();
-        System.out.println(leet.numberToWords(123));
+        System.out.println(leet.numberToWords(12345));
     }
 
     private final String[] LESS_THAN_20 = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};

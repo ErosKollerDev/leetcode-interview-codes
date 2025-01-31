@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.practicing01;
 
 /**
  * Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
@@ -25,10 +25,10 @@ package com.leetcode;
  *
  * -231 <= x <= 231 - 1
  */
-public class Leet_005_ReverseInteger {
+public class P01Leet_005_ReverseInteger {
 
     public static void main(String[] args) {
-        Leet_005_ReverseInteger leet = new Leet_005_ReverseInteger();
+        P01Leet_005_ReverseInteger leet = new P01Leet_005_ReverseInteger();
 //        int intOne = 1534236469;
 //        int intOne = -121;
         int intOne = 1534236469;
