@@ -40,6 +40,7 @@ public class Leet_002_SingleNumber {
 
         int singleNumbrer = 0;
         for (int num : nums) {
+            //TODO: master XOR operator
             singleNumbrer = singleNumbrer ^ num;
         }
         return singleNumbrer;

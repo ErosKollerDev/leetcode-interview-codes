@@ -29,12 +29,14 @@ public class Leet_003_PalindromeNumber {
 
         System.out.println("-----------------");
         System.out.println(Leet_003_PalindromeNumber.isPalindrome(121212121));
-//        System.out.println("-----------------");
-//        System.out.println(Leet_003_PalindromeNumber.isPalindrome(10));
-//        System.out.println("-----------------");
-//        System.out.println(Leet_003_PalindromeNumber.isPalindrome(-121));
-//        System.out.println("-----------------");
-//        System.out.println(Leet_003_PalindromeNumber.isPalindrome(0));
+        System.out.println("-----------------");
+        System.out.println(Leet_003_PalindromeNumber.isPalindrome(995599));
+        System.out.println("-----------------");
+        System.out.println(Leet_003_PalindromeNumber.isPalindrome(10));
+        System.out.println("-----------------");
+        System.out.println(Leet_003_PalindromeNumber.isPalindrome(-121));
+        System.out.println("-----------------");
+        System.out.println(Leet_003_PalindromeNumber.isPalindrome(0));
     }
     public static  boolean isPalindrome(int x) {
 

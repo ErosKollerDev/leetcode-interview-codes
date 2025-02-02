@@ -9,24 +9,24 @@ public class Leet_001_FizzBuzz {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int int3 = sc.nextInt();
-        int int5 = sc.nextInt();
+//        int int3 = sc.nextInt();
+//        int int5 = sc.nextInt();
         int int15 = sc.nextInt();
         sc.close();
 
 
         Leet_001_FizzBuzz leet = new Leet_001_FizzBuzz();
-        List<String> strings =
-                leet.fizzBuzz(int3);
-        System.out.println("Input: " + int3);
-        System.out.println(strings);
-        System.out.println("\n-----------------------");
-        System.out.println("Input: " + int5);
-        strings = leet.fizzBuzz(int5);
-        System.out.println(strings);
+//        List<String> strings =
+//                leet.fizzBuzz(int3);
+//        System.out.println("Input: " + int3);
+//        System.out.println(strings);
+//        System.out.println("\n-----------------------");
+//        System.out.println("Input: " + int5);
+//        strings = leet.fizzBuzz(int5);
+//        System.out.println(strings);
         System.out.println("\n-----------------------");
         System.out.println("Input: " + int15);
-        strings = leet.fizzBuzz(int15);
+        List<String> strings = leet.fizzBuzz(int15);
         System.out.println(strings);
     }
 
