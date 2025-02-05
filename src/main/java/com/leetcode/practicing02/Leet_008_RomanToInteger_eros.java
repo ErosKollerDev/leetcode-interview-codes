@@ -19,7 +19,6 @@ public class Leet_008_RomanToInteger_eros {
 
     public int romanToInt(String romanToConvert) {
         if (romanToConvert.isEmpty()) return 0;
-        int lengthOfRomanNumber = romanToConvert.length();
         Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);

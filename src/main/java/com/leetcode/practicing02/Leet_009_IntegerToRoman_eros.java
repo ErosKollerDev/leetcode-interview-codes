@@ -17,8 +17,8 @@ public class Leet_009_IntegerToRoman_eros {
 
 
     public String intToRoman(int numToConvert) {
-        int[] intRomans = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] romansNumber = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] intRomans = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < intRomans.length; i ++){
             int roman = intRomans[i];
