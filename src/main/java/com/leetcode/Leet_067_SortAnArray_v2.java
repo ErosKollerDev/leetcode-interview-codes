@@ -24,15 +24,14 @@ package com.leetcode;
  * 1 <= nums.length <= 5 * 104
  * -5 * 104 <= nums[i] <= 5 * 104
  */
-public class Leet_067_SortAnArray {
+public class Leet_067_SortAnArray_v2 {
     public static void main(String[] args) {
-        Leet_067_SortAnArray leet = new Leet_067_SortAnArray();
-        int[] sorted =  leet.sortArray(new int[]{5,2,3,1});
-        for(int n : sorted) System.out.println(n);
-
+        Leet_067_SortAnArray_v2 leet = new Leet_067_SortAnArray_v2();
+        int[] sorted = leet.sortArray(new int[]{5, 2, 3, 1,7, 9, 4});
+        for (int n : sorted) System.out.println(n);
     }
 
-    public void merge(int[] nums, int left, int mid, int right) {
+    private void merge(int[] nums, int left, int mid, int right) {
         int leftSize = mid - left + 1;
         int rightSize = right - mid;
         int[] leftArray = new int[leftSize];
@@ -40,10 +39,12 @@ public class Leet_067_SortAnArray {
         for (int i = 0; i < leftSize; i++) {
             leftArray[i] = nums[left + i];
         }
-        for (int j = 0; j < rightSize; j++) {
-            rightArray[j] = nums[mid + 1 + j];
+        for (int y = 0; y < rightSize; y++) {
+            rightArray[y] = nums[mid + y + 1];
         }
+
         int i = 0, j = 0, k = left;
+        //Sort until one of the conditions becane false
         while (i < leftSize && j < rightSize) {
             if (leftArray[i] <= rightArray[j]) {
                 nums[k] = leftArray[i];
@@ -55,33 +56,28 @@ public class Leet_067_SortAnArray {
                 k++;
             }
         }
-        while (i < leftSize) {
-            nums[k] = leftArray[i];
-            i++;
-            k++;
-        }
-        while (j < rightSize) {
-            nums[k] = rightArray[j];
-            j++;
-            k++;
-        }
+        while (i < leftSize) nums[k++] = leftArray[i++];
+        while (j < rightSize) nums[k++] = rightArray[j++];
+
     }
 
-    public void mergeSort(int[] nums, int left, int right) {
+    //Divide by two pointer, call itself two times and then merge
+    private void mergeSort(int[] nums, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
-            //Merge Left partition
             mergeSort(nums, left, mid);
-            //Merge Right partition
             mergeSort(nums, mid + 1, right);
             merge(nums, left, mid, right);
         }
     }
-//TODO Master this code Dude, recursive call to Sort Array
-    public int[] sortArray(int[] nums) {
+
+
+    private int[] sortArray(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
         mergeSort(nums, left, right);
         return nums;
-    }//TC:  O(nlog(n)) SC: O(n)
+    }
+
+
 }

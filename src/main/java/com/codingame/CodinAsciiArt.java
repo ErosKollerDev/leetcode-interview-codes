@@ -32,14 +32,8 @@ public class CodinAsciiArt {
                 if (j + 1 == T.length()) {
                     lineToPrint.append("\n");
                 }
-
-
             }
-
-
         }
-
-
         System.out.println(lineToPrint.toString());
     }
 }
