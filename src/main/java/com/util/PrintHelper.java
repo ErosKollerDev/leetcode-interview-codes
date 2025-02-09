@@ -17,4 +17,10 @@ public class PrintHelper {
         System.out.println();
     }
 
+    public static void printArray(int[] array){
+        for(int n : array){
+            System.out.print(n+" | ");
+        }
+    }
+
 }
