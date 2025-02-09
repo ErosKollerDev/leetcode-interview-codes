@@ -30,15 +30,10 @@ import java.util.Random;
  */
 //https://www.youtube.com/watch?v=HNUwChtLkHo&ab_channel=TeddySmith
 //https://leetcode.com/problems/kth-largest-element-in-an-array/description/
-public class Leet_070_KthLargestElementInAnArray {
+public class Leet_070_KthLargestElementInAnArrayV2 {
     public static void main(String[] args) {
-        Leet_070_KthLargestElementInAnArray leet = new Leet_070_KthLargestElementInAnArray();
-        Random r = new Random();
-        int size = 300;
+        Leet_070_KthLargestElementInAnArrayV2 leet = new Leet_070_KthLargestElementInAnArrayV2();
         int[] nums = new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-//        for (int i = 0; i < nums.length; i++) {
-//            nums[i] = r.nextInt(100);
-//        }
         System.out.println(leet.findKthLargest(nums, 2));
     }
 
@@ -50,28 +45,28 @@ public class Leet_070_KthLargestElementInAnArray {
         return quickSelect(list, k);
     }
 
-    private int quickSelect(List<Integer> list, int k) {
-        if (list.size() == 1) return list.get(0);
-        int pivotIndex = new Random().nextInt(list.size() - 1);
-        int pivot = list.get(pivotIndex);
+    private int quickSelect(List<Integer> nums, int k) {
+        int pivotIndex = new Random().nextInt(nums.size());
+        int pivot = nums.get(pivotIndex);
         List<Integer> less = new ArrayList<>();
         List<Integer> equal = new ArrayList<>();
         List<Integer> greater = new ArrayList<>();
-        for (int n : list) {
-            if (n < pivot) {
-                less.add(n);
-            } else if (n > pivot) {
-                greater.add(n);
+        for (Integer num : nums) {
+            if (num < pivot) {
+                less.add(num);
+            } else if (num > pivot) {
+                greater.add(num);
             } else {
-                equal.add(n);
+                equal.add(num);
             }
         }
         if (k <= greater.size()) {
             return quickSelect(greater, k);
         }
-        if (greater.size() + equal.size() < k) {
+        if (k > greater.size() + equal.size()) {
             return quickSelect(less, k - greater.size() - equal.size());
         }
         return pivot;
     }
+
 }

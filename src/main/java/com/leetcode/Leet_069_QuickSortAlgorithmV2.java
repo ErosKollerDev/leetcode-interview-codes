@@ -5,12 +5,13 @@ import java.util.Random;
 public class Leet_069_QuickSortAlgorithmV2 {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] nums = new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-//        for (int i = 0; i < nums.length; i++) {
-//            nums[i] = r.nextInt(100);
-//        }
+        int size = 300000;
+        int[] nums = new int[size];//{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = r.nextInt(100000);
+        }
         System.out.println("Before");
-        printArray(nums);
+//        printArray(nums);
         quickSort(nums);
         System.out.println("After");
         printArray(nums);
@@ -20,46 +21,41 @@ public class Leet_069_QuickSortAlgorithmV2 {
         quickSort(arr, 0, arr.length - 1);
     }
 
-    //TODO quick sort, practice
-    static void quickSort(int[] arr, int lowIndex, int highIndex) {
-        //lowIndex is less than highIndex or equals to, just return, nothing to do.
+    //https://www.youtube.com/watch?v=h8eyY7dIiN4&t=1214s&ab_channel=CodingwithJohn
+    static void quickSort(int[] nums, int lowIndex, int highIndex) {
+        //Nothing to do
         if (lowIndex >= highIndex) return;
-        //choosing the last item as the pivot
-        int pivot = arr[highIndex];
-        //Creating a pointer based on lowIndex
+        //Choose a pivot element from array
+        int pivot = nums[highIndex];
+        //Create leftPointer
         int leftPointer = lowIndex;
-        //Creating a pointer based on highIndex
+        //Create rightPointer
         int rightPointer = highIndex;
-        //Loop until the pointers meet
+
         while (leftPointer < rightPointer) {
-            //Loop forward the leftPointer
-            while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
+            //Loop forward until find pivot or hit rightPointer
+            while (nums[leftPointer] <= pivot && leftPointer < rightPointer) {
                 leftPointer++;
             }
-            //Loop backwards the rightPointer
-            while (arr[rightPointer] >= pivot && leftPointer < rightPointer) {
+            //Loop backwards until find pivot or hit leftPointer
+            while (nums[rightPointer] >= pivot && leftPointer < rightPointer) {
                 rightPointer--;
             }
-            //swap inside Two pointer meet or one of the pointer encounter a constraint
-            swap(arr, leftPointer, rightPointer);
+            swap(nums, leftPointer, rightPointer);
         }
-        //Swap outside leftPointe to highIndex
-        swap(arr, leftPointer, highIndex);
-        /**
-         * Separating array into left and right side recursive call
-         * Left side start at lowIndex until leftPointer -1
-         */
-        quickSort(arr, lowIndex, leftPointer - 1);
-        // Right side starts at leftPointr + 1 until highIndex
-        quickSort(arr, leftPointer + 1, highIndex);
+        swap(nums, leftPointer, highIndex);
 
+        quickSort(nums, lowIndex, leftPointer - 1);
+
+        quickSort(nums, leftPointer + 1, highIndex);
     }
 
-    private static void swap(int[] arr, int indexL, int indexR) {
-        int tmp = arr[indexL];
-        arr[indexL] = arr[indexR];
-        arr[indexR] = tmp;
+    private static void swap(int[] nums, int leftPointer, int rightPointer) {
+        int tmp = nums[leftPointer]; //6
+        nums[leftPointer] = nums[rightPointer];//2
+        nums[rightPointer] = tmp;//6
     }
+
 
     private static void printArray(int[] arr) {
         for (int n : arr) System.out.print(n + " ");
