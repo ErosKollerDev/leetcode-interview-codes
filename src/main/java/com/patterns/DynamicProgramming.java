@@ -1,5 +1,6 @@
-package com.leetcode;
+package com.patterns;
 
+import com.leetcode.Leet_072_RangeSumQuery2DImmutable;
 import com.util.PrintHelper;
 
 /**
@@ -12,22 +13,19 @@ import com.util.PrintHelper;
  * int sumRegion(int row1, int col1, int row2, int col2) Returns the sum of the elements of matrix inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
  * You must design an algorithm where sumRegion works on O(1) time complexity.
  */
-public class Leet_072_RangeSumQuery2DImmutable {
+//https://leetcode.com/problems/range-sum-query-2d-immutable/description/
+//TODO Dynamic Programming (DP)
+public class DynamicProgramming {
     public static void main(String[] args) {
-        //[[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]
         int[][] matrix = new int[][]
                 {{3, 0, 1, 4, 2}, {5, 6, 3, 2, 1}, {1, 2, 0, 1, 5}, {4, 1, 0, 1, 7}, {1, 0, 3, 0, 5}};
         PrintHelper.printMatrix(matrix);
-        Leet_072_RangeSumQuery2DImmutable leet = new Leet_072_RangeSumQuery2DImmutable(matrix);
+        DynamicProgramming leet = new DynamicProgramming(matrix);
         System.out.println(leet.sumRegion(2, 1, 4, 3));//8
     }
-
     //Dynamic Programming
     int[][] dp;
-
-    public Leet_072_RangeSumQuery2DImmutable(int[][] matrix) {
-        //Row size matrix.length+ 1
-        //Column size matrix[0].length + 1
+    public DynamicProgramming(int[][]  matrix) {
         dp = new int[matrix.length + 1][matrix[0].length + 1];
         for (int r = 0; r < matrix.length; r++) {
             for (int c = 0; c < matrix[0].length; c++) {
@@ -44,6 +42,5 @@ public class Leet_072_RangeSumQuery2DImmutable {
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
         return dp[row2 + 1][col2 + 1] - dp[row1][col2 + 1] - dp[row2 + 1][col1] + dp[row1][col1];
-    }//TC 
-
+    }//TC
 }
