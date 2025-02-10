@@ -27,7 +27,7 @@ package com.leetcode;
 public class Leet_025_BinarySearchRotatedSortedArray {
     public static void main(String[] args) {
         Leet_025_BinarySearchRotatedSortedArray leet = new Leet_025_BinarySearchRotatedSortedArray();
-        System.out.println(leet.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
+        System.out.println(leet.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 4));
 
     }
 
