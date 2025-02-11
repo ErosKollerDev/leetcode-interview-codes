@@ -1,5 +1,9 @@
 package com.leetcode;
 
+import com.util.PrintHelper.*;
+
+import static com.util.PrintHelper.printArray;
+
 /**
  * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
  *
@@ -27,14 +31,11 @@ public class Leet_901_TwoSum {
 
     public static void main(String[] args) {
         Leet_901_TwoSum leet = new Leet_901_TwoSum();
-//        int[] ints = leet.twoSum(new int[]{2, 7, 11, 15}, 9);
+        int[] ints = leet.twoSum(new int[]{2, 7, 11, 15}, 9);
 //        int[] ints = leet.twoSum(new int[]{3, 2, 4}, 6);
 //        int[] ints = leet.twoSum(new int[]{0,4,3,0}, 0);
-        int[] ints = leet.twoSum(new int[]{0, 3, -3, 4, -1}, -1);
-        System.out.println(ints);
-        for (int i = 0; i < ints.length; i++) {
-            System.out.print(ints[i] + " ");
-        }
+//        int[] ints = leet.twoSum(new int[]{0, 3, -3, 4, -1}, -1);
+        printArray(ints);
     }
 //TODO  TwoSum should be optimized
     public int[] twoSum(int[] nums, int target) {

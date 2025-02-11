@@ -1,6 +1,5 @@
 package com.patterns;
 
-import com.leetcode.Leet_072_RangeSumQuery2DImmutable;
 import com.util.PrintHelper;
 
 /**

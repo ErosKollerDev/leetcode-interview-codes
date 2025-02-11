@@ -38,9 +38,9 @@ import java.util.List;
  * 3 <= nums.length <= 3000
  * -105 <= nums[i] <= 105
  */
-public class Leet_055_3Sum {
+public class Leet_055_3ThreeSum {
     public static void main(String[] args) {
-        Leet_055_3Sum leet = new Leet_055_3Sum();
+        Leet_055_3ThreeSum leet = new Leet_055_3ThreeSum();
         leet.threeSum(new int[]{-1,0,1,2,-1,-4});
     }
 

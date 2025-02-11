@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.util.PrintHelper.printArray;
+
 /**
  * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
  * <p>
@@ -32,16 +34,15 @@ public class Leet_027_TwoSum {
     public static void main(String[] args) {
         Leet_027_TwoSum leet = new Leet_027_TwoSum();
         int[] ints = leet.twoSum(new int[]{2, 7, 11, 15}, 9);
-        for (Integer i : ints) System.out.print(i + " ");
-        System.out.println("");
+
+
         ints = leet.twoSum(new int[]{3, 2, 4}, 6);
-        for (Integer i : ints) System.out.print(i + " ");
+        printArray(ints);
 
 //        int[] ints = leet.twoSum(new int[]{3, 2, 4}, 6);
 //        int[] ints = leet.twoSum(new int[]{0,4,3,0}, 0);
     }
 
-    //TODO  TwoSum should be optimized
     public int[] twoSum(int[] nums, int target) {
         int[] ans = new int[2];
         Map<Integer, Integer> map = new HashMap<>();

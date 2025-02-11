@@ -1,14 +1,15 @@
 package com.leetcode;
 
-import com.util.PrintHelper;
+import static com.util.PrintHelper.printMatrix;
 
 public class Leet_074_RotateImage {
     public static void main(String[] args) {
         Leet_074_RotateImage leet = new Leet_074_RotateImage();
-        int[][] matrix = new int[]     []{{1,2,3},{4,5,6},{7,8,9}};
-        PrintHelper.printMatrix(matrix);
+//        int[][] matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrix = new int[][]{{-1, -2, -3,-4}, { -5, -6,-7,-8}, { 10,11,12,13},{ 14,15,16,17}};
+        printMatrix(matrix);
         leet.rotate(matrix);
-        PrintHelper.printMatrix(matrix);
+        printMatrix(matrix);
 
     }
 
@@ -16,8 +17,9 @@ public class Leet_074_RotateImage {
         int left = 0,
                 right = matrix[0].length - 1;
         while (left < right) {
-            for (int i = 0; i < (right - 1); i++) {
-                int top = left, bottom = right;
+            for (int i = 0; i < (right - left); i++) {
+                int top = left;
+                int bottom = right;
                 //Save the top left into a var
                 int tmpTopLeft = matrix[top][left + i];
                 //Move the bottom left to top left
