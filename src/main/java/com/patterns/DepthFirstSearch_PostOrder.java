@@ -1,13 +1,10 @@
 package com.patterns;
 
-import java.util.ArrayList;
-
 //TODO  Depth First Search  (DSF) Recursive
-public class DepthFirstSearch {
+public class DepthFirstSearch_PostOrder {
     static Node root;
-
     public static void main(String[] args) {
-        DepthFirstSearch dfs = new DepthFirstSearch();
+        DepthFirstSearch_PostOrder dfs = new DepthFirstSearch_PostOrder();
         dfs.insert(47);
         dfs.insert(21);
         dfs.insert(76);
@@ -16,13 +13,6 @@ public class DepthFirstSearch {
         dfs.insert(52);
         dfs.insert(82);
     }
-
-    public ArrayList<Integer> DFSPreOrder(){
-        ArrayList<Integer>  results = new ArrayList<>();
-
-        return results;
-    }
-
 
     public boolean insert(int value) {
         Node newNode = new Node(value);

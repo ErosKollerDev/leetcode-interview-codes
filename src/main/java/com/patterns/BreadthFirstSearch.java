@@ -12,19 +12,19 @@ public class BreadthFirstSearch {
     static Node root;
 
     public static void main(String[] args) {
-        BreadthFirstSearch BFS = new BreadthFirstSearch();
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
 //        root = new Node(0);
-        BFS.insert(47);
-        BFS.insert(21);
-        BFS.insert(76);
-        BFS.insert(18);
-        BFS.insert(27);
-        BFS.insert(52);
-        BFS.insert(82);
+        bfs.insert(47);
+        bfs.insert(21);
+        bfs.insert(76);
+        bfs.insert(18);
+        bfs.insert(27);
+        bfs.insert(52);
+        bfs.insert(82);
 
-        ArrayList<Integer> bfs = BFS.BFS();
+        ArrayList<Integer> results = bfs.BFS();
 
-        PrintHelper.printArray(bfs.stream().mapToInt(i -> i).toArray());
+        PrintHelper.printArray(results.stream().mapToInt(i -> i).toArray());
 
 
     }
