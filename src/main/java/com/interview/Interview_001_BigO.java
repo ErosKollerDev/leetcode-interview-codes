@@ -13,12 +13,12 @@ public class Interview_001_BigO {
             for (int y = 0; y < n; y++) {
                 System.out.println(i + " " + y);
             }
-        }//O (n^2)
+        }
 
         for (int y = 0; y < n; y++) {
             System.out.println(y);
         }
-    } //O(n^2 + n)
+    } //TC: O(n^2 + n), SC: O(n)
 
     private void printItemsV2(int a, int b) {
         for (int y = 0; y < a; y++) {
@@ -27,7 +27,7 @@ public class Interview_001_BigO {
         for (int y = 0; y < b; y++) {
             System.out.println(y);
         }
-    }//O(n + n)
+    }//TC: O(n + n)
 
 
     private int findTargetO_Of_N(int[] nums, int target) {
@@ -38,9 +38,9 @@ public class Interview_001_BigO {
             if (nums[middle] == target) return nums[middle];
             if (target > nums[middle]) left = middle + 1;
             if (target < nums[middle]) right = middle - 1;
-        }// O(log n) : Obs -> Divide and Conquer
+        }
         return -1;
-    }
+    }//TC: O(log n) : Obs -> Divide and Conquer
 
 
     private void addingToList(int a) {
