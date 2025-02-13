@@ -1,6 +1,8 @@
-package com.leetcode;
+package com.patterns;
 
-public class Leet_077_Merge_Two_SortedList_21 {
+import com.leetcode.ListNode;
+
+public class Merge_Two_SortedLinkedList_21 {
     public static void main(String[] args) {
         ListNode odd = new ListNode(1,
                 new ListNode(3,
@@ -11,7 +13,7 @@ public class Leet_077_Merge_Two_SortedList_21 {
                         new ListNode(6,
                                 new ListNode(8))));
 
-        Leet_077_Merge_Two_SortedList_21 leet = new Leet_077_Merge_Two_SortedList_21();
+        Merge_Two_SortedLinkedList_21 leet = new Merge_Two_SortedLinkedList_21();
         ListNode fullList = leet.mergeTwoLists(odd, even);
         System.out.println(fullList.toString());
 
@@ -21,18 +23,18 @@ public class Leet_077_Merge_Two_SortedList_21 {
         ListNode fakeHead = new ListNode(-9999);
         ListNode pointerOne = list1, pointerTwo = list2, current = fakeHead;
         while(pointerOne != null && pointerTwo != null){
-            if(pointerOne.val < pointerTwo.val ){
-                current.next = pointerOne;
-                current = current.next;
-                pointerOne = pointerOne.next;
+            if(pointerOne.getVal() < pointerTwo.getVal() ){
+                current.setNext(pointerOne);
+                current = current.getNext();
+                pointerOne = pointerOne.getNext();
             }else{
-                current.next = pointerTwo;
-                current = current.next;
-                pointerTwo = pointerTwo.next;
+                current.setNext(pointerTwo);
+                current = current.getNext();
+                pointerTwo = pointerTwo.getNext();
             }
         }
-        if(pointerOne == null && pointerTwo != null)current.next = pointerTwo;
-        if(pointerTwo == null && pointerOne != null)current.next = pointerOne;
+        if(pointerOne == null && pointerTwo != null)current.setNext(pointerTwo);
+        if(pointerTwo == null && pointerOne != null)current.setNext(pointerOne);
         return fakeHead.getNext();
     }//TC: O(m + n), SC: O(1)
 

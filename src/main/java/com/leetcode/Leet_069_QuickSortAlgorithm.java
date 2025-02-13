@@ -10,7 +10,7 @@ public class Leet_069_QuickSortAlgorithm {
     static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
-            quickSort(arr, low, pi - 1);//left partition (high)-> lenght -1 for the left partition
+            quickSort(arr, low, pi - 1);//left partition (high)-> length -1 for the left partition
             quickSort(arr, pi + 1, high);//right partition (low)-> pi + 1 to skip the last position of the left partition
         }
     }

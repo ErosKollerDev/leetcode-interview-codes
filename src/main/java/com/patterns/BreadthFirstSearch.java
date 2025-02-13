@@ -22,11 +22,26 @@ public class BreadthFirstSearch {
         bfs.insert(52);
         bfs.insert(82);
 
-        ArrayList<Integer> results = bfs.BFS();
+        ArrayList<Integer> results = bfs.breadthFirstSearch();
 
         PrintHelper.printArray(results.stream().mapToInt(i -> i).toArray());
 
 
+    }
+
+    private ArrayList<Integer> breadthFirstSearch() {
+        Node current = root;
+        Queue<Node> q = new LinkedList<>();
+        q.offer(current);
+        ArrayList<Integer> result = new ArrayList<>();
+        while(!q.isEmpty()){
+            current = q.remove();
+            result.add(current.value);
+            if(current.left != null)q.offer(current.left);
+            if(current.right != null)q.offer(current.right);
+
+        }
+        return result;
     }
 
 
@@ -55,34 +70,22 @@ public class BreadthFirstSearch {
         }
     }
 
-    public boolean contains(int value) {
-        if (root == null) return false;
-        Node temp = root;
-        while (temp != null) {
-            if (value < temp.value) {
-                temp = temp.left;
-            } else if (value > temp.value) {
-                temp = temp.right;
-            } else {
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean contains(int value) {
+//        if (root == null) return false;
+//        Node temp = root;
+//        while (temp != null) {
+//            if (value < temp.value) {
+//                temp = temp.left;
+//            } else if (value > temp.value) {
+//                temp = temp.right;
+//            } else {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
-    public ArrayList<Integer> BFS() {
-        Node current = root;
-        Queue<Node> queue = new LinkedList<>();
-        ArrayList<Integer> results = new ArrayList<>();
-        queue.add(current);
-        while (!queue.isEmpty()) {
-            current = queue.remove();
-            results.add(current.value);
-            if (current.left != null) queue.add(current.left);
-            if (current.right != null) queue.add(current.right);
-        }
-        return results;
-    }
+
 
 
 }
