@@ -6,7 +6,7 @@ public class QuickSortAlgorithm {
     public static void main(String[] args) {
         QuickSortAlgorithm quickSort = new QuickSortAlgorithm();
         int[] nums = new int[]{2, 4, 1, 3, 6, 5};
-        quickSort.quickSort(nums, 0, nums.length - 1);
+        quickSort.quickSort(nums);
         printArray(nums);
     }
     //quickSort(arr)
