@@ -56,21 +56,21 @@ public class BreadthFirstSearch {
         Node temp = root;
         //Infinite Loop (true)
         while (true) {
-            /**
-             * if newNode.value == temp.value (Nothing to do) return false, don't insert something that's already there
-             * (left) if newNode.value is less than temp.value (left side), test is left is null, if it is, assign to temp.left, if not temp == temp.left to kick the loop again
-             */
-            if (newNode.value == temp.value) return false;
+            // if newNode.value == temp.value (Nothing to do) return false, don't insert something that's already there
+            if (newNode.value == temp.value) {
+                return false;
+            }
+            // (left) if newNode.value is less than temp.value (left side), test is left is null, if it is, assign to temp.left, if not temp == temp.left to kick the loop again
             if (newNode.value < temp.value) {
                 if (temp.left == null) {
                     temp.left = newNode;
-                    return true;
                 }
                 temp = temp.left;
-            } else {
-                if (temp.right == null) {
+            }
+            // (right) if newNode.value is less than temp.value (right side), test is right is null, if it is, assign to temp.right, if not temp == temp.right to kick the loop again
+            else {
+                if(temp.right == null){
                     temp.right = newNode;
-                    return true;
                 }
                 temp = temp.right;
             }

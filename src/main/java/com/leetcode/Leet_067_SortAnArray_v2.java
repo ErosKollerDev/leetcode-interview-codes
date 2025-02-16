@@ -28,7 +28,7 @@ public class Leet_067_SortAnArray_v2 {
     public static void main(String[] args) {
         Leet_067_SortAnArray_v2 leet = new Leet_067_SortAnArray_v2();
         int[] sorted = leet.sortArray(new int[]{5, 2, 3, 1,7, 9, 4});
-        for (int n : sorted) System.out.println(n);
+
     }
 
     private void merge(int[] nums, int left, int mid, int right) {

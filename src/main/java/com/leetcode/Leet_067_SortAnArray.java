@@ -1,5 +1,11 @@
 package com.leetcode;
 
+import com.util.PrintHelper;
+
+import java.util.Random;
+
+import static com.util.PrintHelper.printArray;
+
 /**
  * Given an array of integers nums, sort the array in ascending order and return it.
  * <p>
@@ -27,8 +33,11 @@ package com.leetcode;
 public class Leet_067_SortAnArray {
     public static void main(String[] args) {
         Leet_067_SortAnArray leet = new Leet_067_SortAnArray();
-        int[] sorted =  leet.sortArray(new int[]{5,2,3,1});
-        for(int n : sorted) System.out.println(n);
+        int[] sorted = leet.sortArray(new int[]{5, 2, 3, 1});
+        printArray(sorted);
+        int[] quickSorted = new int[]{5, 2, 3, 1};
+        leet.quickSort(quickSorted);
+        printArray(quickSorted);
 
     }
 
@@ -77,11 +86,43 @@ public class Leet_067_SortAnArray {
             merge(nums, left, mid, right);
         }
     }
-//TODO Master this code Dude, recursive call to Sort Array
+
+    //TODO Master this code Dude, recursive call to Sort Array
     public int[] sortArray(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
         mergeSort(nums, left, right);
         return nums;
     }//TC:  O(nlog(n)) SC: O(n)
+
+    private void quickSort(int[] arr) {
+        quickSort(arr, 0, arr.length - 1);
+    }
+
+    private void quickSort(int[] arr, int low, int high) {
+        if (low >= high) return;
+        int left = low;
+        int right = high;
+        int indexPivot = new Random().nextInt(high - low)+low;
+        swap(arr, indexPivot, high);
+        int pivot = arr[high];
+        while (left < right) {
+            while (arr[left] <= pivot && left < right) {
+                left++;
+            }
+            while (arr[right] >= pivot && left < right) {
+                right--;
+            }
+            swap(arr, left, right);
+        }
+        swap(arr, left, high);
+        quickSort(arr, low, left - 1);
+        quickSort(arr, left + 1, high);
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 }

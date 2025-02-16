@@ -4,9 +4,9 @@ import java.util.Random;
 
 import static com.util.PrintHelper.printArray;
 
-public class QuickSortAlgorithmVanila {
+public class QuickSortAlgorithmVanilaV1 {
     public static void main(String[] args) {
-        QuickSortAlgorithmVanila quickSort = new QuickSortAlgorithmVanila();
+        QuickSortAlgorithmVanilaV1 quickSort = new QuickSortAlgorithmVanilaV1();
         Random r = new Random();
         int[] nums = new int[30];
         for (int i = 0; i < nums.length; i++) {
@@ -29,6 +29,8 @@ public class QuickSortAlgorithmVanila {
 
     private void quickSort(int[] arr, int low, int high) {
         if (low >= high) return;
+        int randomIndex = new Random().nextInt(high - low) + low;
+        swap(arr, randomIndex, high);
         int pivot = arr[high];
         int leftPointer = low;
         int righPointer = high;
