@@ -31,6 +31,7 @@ public class PrintHelper {
         for (int n : array) {
             System.out.print(n + " | ");
         }
+        System.out.println();
     }
 
     public static void printArray(Integer[] array) {

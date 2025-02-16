@@ -1,7 +1,7 @@
 package com.patterns;
 
 import static com.util.PrintHelper.printArray;
-
+//https://www.youtube.com/watch?v=h8eyY7dIiN4&t=931s&ab_channel=CodingwithJohn
 public class QuickSortAlgorithm {
     public static void main(String[] args) {
         QuickSortAlgorithm quickSort = new QuickSortAlgorithm();
@@ -27,8 +27,8 @@ public class QuickSortAlgorithm {
     }
 
     private int partition(int[] arr, int low, int high) {
-        int i = low - 1;
         int pivot = arr[high];
+        int i = low - 1;
         for (int j = low; j < high; j++) {
             if (pivot > arr[j]) {
                 i++;
