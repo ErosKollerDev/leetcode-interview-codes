@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+import static com.util.PrintHelper.printArray;
+
 /**
  * Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
  * <p>
@@ -32,7 +34,8 @@ import java.util.PriorityQueue;
 public class Leet_005_Top_K_Frequent_347 {
     public static void main(String[] args) {
         Leet_005_Top_K_Frequent_347 leet = new Leet_005_Top_K_Frequent_347();
-        leet.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        int[] ints = leet.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        printArray(ints);
     }
 
     public int[] topKFrequent(int[] nums, int k) {
