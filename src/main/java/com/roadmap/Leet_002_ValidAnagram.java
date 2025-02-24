@@ -38,6 +38,9 @@ public class Leet_002_ValidAnagram {
         Leet_002_ValidAnagram leet = new Leet_002_ValidAnagram();
 
         System.out.println(leet.isAnagram("eros", "sore"));
+        System.out.println(leet.isAnagram("eros", "sore"));
+        System.out.println(leet.isAnagram("eros", "sore"));
+        System.out.println(leet.isAnagram("eros", "sreo"));
         System.out.println(leet.isAnagram("eros", "sory"));
     }
 
