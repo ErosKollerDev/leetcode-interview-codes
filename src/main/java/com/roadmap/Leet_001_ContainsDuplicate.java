@@ -42,30 +42,30 @@ public class Leet_001_ContainsDuplicate {
 //        System.out.println(leet.containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}));
 //        System.out.println(leet.containsDuplicate(new int[]{1000000000,1000000000,11}));
 //        System.out.println(leet.containsDuplicate(new int[]{1000000000,100000000,11,9,1000000000}));
-        System.out.println(leet.containsDuplicate(new int[]{1,5,-2,-4,0}));
+        System.out.println(leet.containsDuplicate(new int[]{1, 5, -2, -4, 0}));
     }
 
     public boolean containsDuplicate(int[] nums) {
-       if(nums.length == 1)return false;
-       Set<Integer> duplicates = new HashSet<>();
-       int left = 0;
-       int right = nums.length -1;
-       while(left <= right){
-           if(duplicates.contains(nums[left])){
-               return true;
-           }else{
-               duplicates.add(nums[left]);
-           }
+        if (nums.length == 1) return false;
+        Set<Integer> duplicates = new HashSet<>();
+        int left = 0;
+        int right = nums.length - 1;
+        while (left <= right) {
+            if (duplicates.contains(nums[left])) {
+                return true;
+            } else {
+                duplicates.add(nums[left]);
+            }
 
-           if(duplicates.contains(nums[right])){
-               return true;
-           }else{
-               duplicates.add(nums[right]);
-           }
+            if (duplicates.contains(nums[right]) && left < right) {
+                return true;
+            } else {
+                duplicates.add(nums[right]);
+            }
 
-           left++;
-           right--;
-       }
+            left++;
+            right--;
+        }
 
         return false;
     }

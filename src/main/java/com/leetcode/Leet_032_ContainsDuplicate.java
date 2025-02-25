@@ -60,7 +60,7 @@ public class Leet_032_ContainsDuplicate {
             }else{
                 setInt.add(lToTest);
             }
-            if(left < right&& setInt.contains(rToTest)){
+            if(left < right && setInt.contains(rToTest)){
                 return  true;
             }else{
                 setInt.add(rToTest);
