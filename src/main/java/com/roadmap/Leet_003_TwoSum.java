@@ -32,10 +32,14 @@ public class Leet_003_TwoSum {
 
     public static void main(String[] args) {
         Leet_003_TwoSum leet = new Leet_003_TwoSum();
-//        int[] ints = leet.twoSum(new int[]{2, 7, 11, 15}, 9);
-//        int[] ints = leet.twoSum(new int[]{3, 2, 4}, 6);
-//        int[] ints = leet.twoSum(new int[]{0,4,3,0}, 0);
-        int[] ints = leet.twoSum(new int[]{0, 3, -3, 4, -1}, -1);
+        int[] ints = null;
+        ints = leet.twoSum(new int[]{2, 7, 11, 15}, 9);
+        printArray(ints);
+        ints = leet.twoSum(new int[]{3, 2, 4}, 6);
+        printArray(ints);
+        ints = leet.twoSum(new int[]{0, 4, 3, 0}, 0);
+        printArray(ints);
+        ints = leet.twoSum(new int[]{0, 3, -3, 4, -1}, -1);
         printArray(ints);
     }
 

@@ -19,8 +19,7 @@ public class Leet_999_QuickSortAlgorithmVanila {
         printArray(nums);
     }
     //quickSort(arr)
-    //quickSort(arr, int low, int high
-    //int partition(arr,int low , int high
+    //quickSort(arr, int low, int high ** int partition(arr,int low , int high
     //swap(arr, int i, int j)
 
     private void quickSort(int[] arr) {

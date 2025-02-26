@@ -34,7 +34,14 @@ import static com.util.PrintHelper.printArray;
 public class Leet_005_Top_K_Frequent_347 {
     public static void main(String[] args) {
         Leet_005_Top_K_Frequent_347 leet = new Leet_005_Top_K_Frequent_347();
-        int[] ints = leet.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        int[] ints = null;
+        ints = leet.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        printArray(ints);
+        ints = leet.topKFrequent(new int[]{1, 1, 1, 2, 2, 3,9,9,9,9,9,9}, 3);
+        printArray(ints);
+        ints = leet.topKFrequent(new int[]{1, 5,5,5,4,5,1, 1, 2, 2, 3}, 2);
+        printArray(ints);
+        ints = leet.topKFrequent(new int[]{1, 10, 10, 2, 2, 3}, 2);
         printArray(ints);
     }
 
